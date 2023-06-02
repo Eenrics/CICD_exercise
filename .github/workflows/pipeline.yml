@@ -23,10 +23,10 @@ jobs:
           node-version: '16'
       - name: Install Packages
         run: npm install
-        working-directory: /
+        working-directory: ./
       - name: lint
         run: npm run eslint
-        working-directory: /
+        working-directory: ./
 
   build:
     needs: [test_and_lint]
@@ -38,10 +38,10 @@ jobs:
           node-version: '16'
       - name: Install Packages
         run: npm install
-        working-directory: /
+        working-directory: ./
       - name: build
         run: npm run build
-        working-directory: /
+        working-directory: ./
       - name: Notify if build fails
         uses: rjstone/discord-webhook-notify@v1
         if: ${{ failure() }}
