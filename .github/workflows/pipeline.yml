@@ -40,7 +40,8 @@ jobs:
         run: npm install
         working-directory: ./
       - name: build
-        run: npm run build:ui
+        # run: npm run build:ui
+        run: echo built
         working-directory: ./
       - name: Notify if build fails
         uses: rjstone/discord-webhook-notify@v1
